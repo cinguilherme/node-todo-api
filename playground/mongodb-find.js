@@ -15,20 +15,20 @@ client.connect((err) => {
     console.log('connection to db was successful');
     const db = client.db(dbName);
 
-    // var ret = db.collection('Users').find().toArray().then((docs) => {
+    var ret = db.collection('Users').find().toArray().then((docs) => {
 
-    //     console.log('all users in here ', docs);
-    
-    //     client.close();
-    // }, (err) => {
-    //     console.log('error in fetching docs ', err);
-    //     client.close();
-    // });
+        console.log('all users in here ', docs);
+
+        client.close();
+    }, (err) => {
+        console.log('error in fetching docs ', err);
+        client.close();
+    });
 
     var ret = db.collection('Users').find().toArray().then((docs) => {
 
         console.log('all users in here ', docs);
-    
+
         client.close();
     }, (err) => {
         console.log('error in fetching docs ', err);
@@ -36,6 +36,5 @@ client.connect((err) => {
     });
 
 
-    
 
 });
