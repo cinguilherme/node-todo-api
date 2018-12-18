@@ -20,11 +20,15 @@ client.connect((err) => {
     },{
         $set: {
             name: 'reppy changed'
+        },
+        $inc: {
+            age: 1
         }
     },{
         returnOriginal: false
     }).then((result) => {
         console.log(result);
+        client.close();
     });
 
 });
