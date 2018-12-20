@@ -30,3 +30,5 @@ app.listen(port, () => {
 
     console.log(`app is up on the port ${port}`);
 });
+
+module.exports = { app };
